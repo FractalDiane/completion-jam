@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
 	float speed = 12f;
 	Quaternion modelRotation;
 
+	float runBlend = 0f;
+
 	GameObject objectCarrying;
 	GameObject personEscorting;
 
@@ -36,12 +38,22 @@ public class Player : MonoBehaviour
 	{
 		horizontal = Input.GetAxisRaw("Horizontal");
 		vertical = Input.GetAxisRaw("Vertical");
+
+		animator.SetFloat("Blend", runBlend);
 	}
 
 	void FixedUpdate()
 	{
 		Vector3 target = new Vector3(horizontal, 0f, vertical);
 		Vector3 result = target * speed;
+		if (result.magnitude > 0)
+		{
+			runBlend = Mathf.Clamp(runBlend + 4f * Time.deltaTime, 0f, 1f);
+		}
+		else
+		{
+			runBlend = Mathf.Clamp(runBlend - 4f * Time.deltaTime, 0f, 1f);
+		}
 
 		if (vertical != 0 || horizontal != 0)
 		{
