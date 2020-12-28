@@ -23,7 +23,6 @@ public class MainMenuButton : MonoBehaviour
         if(Vector3.Distance(target, current) > 0.01f)
         {
             Vector3 newScale = Vector3.Lerp(current, target, scalingSpeed);
-            Debug.Log(newScale);
             transform.localScale = newScale;
         }
     }
@@ -31,11 +30,17 @@ public class MainMenuButton : MonoBehaviour
     public void OnMouseEnterButton()
     {
         mouseOnButton = true;
-        Debug.Log("yeah");
     }
 
     public void OnMouseExitButton()
     {
         mouseOnButton = false;
+    }
+
+    //reset the state when disabled to solve issue: when going to another page and go back the button remain selected
+    void OnDisable()
+    {
+        mouseOnButton = false;
+        transform.localScale = initSize;
     }
 }
