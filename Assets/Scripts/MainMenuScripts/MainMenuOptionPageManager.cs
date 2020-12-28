@@ -7,9 +7,9 @@ public class MainMenuOptionPageManager : MonoBehaviour
 {
     #region Volumes
     [Header("Volume")]
-    private float currentMasterVlume;
-    private float currentMusicVlume;
-    private float currentSFXVlume;
+    private float currentMasterVlume = 1;
+    private float currentMusicVlume = 1;
+    private float currentSFXVlume = 1;
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
