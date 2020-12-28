@@ -16,24 +16,27 @@ public class PauseMenuManager : MonoBehaviour
             if(pauseMenuPage.activeSelf)
                 Resume();
             else
-                pauseMenuPage.SetActive(!pauseMenuPage.activeSelf);
+                Pause();
         }
     }
 
-    void ShowPaueMenu()
+    void Pause()
     {
         pauseMenuPage.SetActive(true);
         mainMenuConfimPage.SetActive(false);
         exitConfirmPage.SetActive(false);
+        Time.timeScale = 0;
     }
 
     public void Resume()
     {
+        Time.timeScale = 1;
         pauseMenuPage.SetActive(false);
     }
 
     public void GoToMainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
 
