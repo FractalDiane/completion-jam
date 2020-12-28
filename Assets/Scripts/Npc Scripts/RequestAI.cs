@@ -48,6 +48,7 @@ public class RequestAI : MonoBehaviour
             if(currentRequestGap <= 0)
             {
                 gapActive = false;
+                timeSlider.gameObject.SetActive(true);
                 //select new request
                 SetMaxSatisfaction(30f, requestsList[Random.Range(0, System.Enum.GetValues(typeof(ItemType)).Length - 1)]);
             }
@@ -72,6 +73,7 @@ public class RequestAI : MonoBehaviour
             timeIsReducing = false;
             currentRequestGap = maxRequestGap;
             gapActive = true;
+            timeSlider.gameObject.SetActive(false);
         }
         else
         {
