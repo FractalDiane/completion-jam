@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 	void Start()
 	{
 		rigidbody = GetComponent<Rigidbody>();
-		animator = GetComponent<Animator>();
+		animator = GetComponentInChildren<Animator>();
 	}
 
 	void Update()
