@@ -8,6 +8,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject optionPage;
     [SerializeField] private GameObject creditPage;
 
+    [SerializeField] private MainMenuOptionPageManager optionPageManager;
     public void StartGame()
     {
 
