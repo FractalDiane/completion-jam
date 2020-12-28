@@ -8,6 +8,9 @@ public class CarryObject : MonoBehaviour
 	string itemName = "Thing";
 
 	[SerializeField]
+	ItemType type;
+
+	[SerializeField]
 	float pickupTime = 0.5f;
 
 	[SerializeField]
@@ -19,9 +22,13 @@ public class CarryObject : MonoBehaviour
 
 	float startY;
 
+	GameObject dropPoint = null;
+
+	public ItemType Type { get => type; }
+
 	void Start()
 	{
-		startY = transform.position.y;
+		//startY = transform.position.y;
 	}
 
 	void Update()
@@ -36,10 +43,10 @@ public class CarryObject : MonoBehaviour
 				transform.SetParent(player.CarryPosition.transform);
 				beingCarried = true;
 			}
-			else
+			else if (dropPoint != null)
 			{
 				transform.SetParent(null);
-				transform.position = new Vector3(transform.position.x, startY, transform.position.z);
+				transform.position = dropPoint.transform.position;
 				Player player = playerRef.GetComponent<Player>();
 				player.ObjectCarrying = null;
 				beingCarried = false;
@@ -54,6 +61,10 @@ public class CarryObject : MonoBehaviour
 			playerInArea = true;
 			playerRef = collider.gameObject;
 		}
+		else if (collider.gameObject.tag == "ItemDropPoint")
+		{
+			dropPoint = collider.gameObject;
+		}
 	}
 
 	void OnTriggerExit(Collider collider)
@@ -61,6 +72,10 @@ public class CarryObject : MonoBehaviour
 		if (collider.gameObject.tag == "Player")
 		{
 			playerInArea = false;
+		}
+		else if (collider.gameObject.tag == "ItemDropPoint")
+		{
+			dropPoint = null;
 		}
 	}
 }
