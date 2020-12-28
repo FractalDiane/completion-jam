@@ -9,9 +9,12 @@ public class Player : MonoBehaviour
 	new Rigidbody rigidbody;
 	Animator animator;
 
+	[SerializeField]
+	GameObject model;
+
 	float horizontal;
 	float vertical;
-	float speed = 5f;
+	float speed = 12f;
 	Quaternion modelRotation;
 
 	void Start()
@@ -35,9 +38,9 @@ public class Player : MonoBehaviour
 			modelRotation = Quaternion.LookRotation(target, Vector3.up);
 		}
 		
-		Quaternion newRot = Quaternion.Slerp(transform.rotation, modelRotation, RotationInterpolateSpeed * Time.deltaTime);
+		Quaternion newRot = Quaternion.Slerp(model.transform.rotation, modelRotation, RotationInterpolateSpeed * Time.deltaTime);
 
 		rigidbody.velocity = result;
-		transform.rotation = newRot;
+		model.transform.rotation = newRot;
 	}
 }
