@@ -20,13 +20,13 @@ public class RequestAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetMaxSatisfaction(5f, ItemType.GetSeated);
+        SetMaxSatisfaction(10f, requiredObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("DebugComplete"))
         {
             CheckRequirement(ItemType.GetSeated);
         }

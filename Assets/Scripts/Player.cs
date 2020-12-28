@@ -73,6 +73,8 @@ public class Player : MonoBehaviour
 		{
 			RequestAI kid = collider.gameObject.GetComponent<RequestAI>();
 			kid.CheckRequirement(objectCarrying.GetComponent<CarryObject>().Type);
+			Destroy(objectCarrying);
+			objectCarrying = null;
 		}
 	}
 }
