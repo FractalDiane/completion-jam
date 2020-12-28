@@ -18,6 +18,7 @@ public class MainMenuManager : MonoBehaviour
     {
         mainPage.SetActive(false);
         optionPage.SetActive(true);
+        optionPageManager.Initialize();
     }
 
     public void ShowCreditPage()
