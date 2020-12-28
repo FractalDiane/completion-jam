@@ -66,4 +66,13 @@ public class Player : MonoBehaviour
 		rigidbody.velocity = result;
 		model.transform.rotation = newRot;
 	}
+
+	void OnTriggerEnter(Collider collider)
+	{
+		if (objectCarrying != null && collider.gameObject.tag == "Kid")
+		{
+			RequestAI kid = collider.gameObject.GetComponent<RequestAI>();
+			kid.CheckRequirement(objectCarrying.GetComponent<CarryObject>().Type);
+		}
+	}
 }
