@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class DialogueManager : MonoBehaviour
 {
     
-
+    public static DialogueManager dialogueManagerInstance;
     static Story story;
 
     List<string> tags;
@@ -24,7 +24,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Animator animator;
 
     #region Checks
-    [SerializeField] bool isTalking = false;
     [SerializeField] bool playerCanProceed;
     [SerializeField] bool playerInConversation;
     #endregion
@@ -34,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         tags = new List<string>();
+        dialogueManagerInstance = this;
     }
 
     void Update()
@@ -140,5 +140,10 @@ public class DialogueManager : MonoBehaviour
     void SetNameText(string _name)
     {
         nameText.text = _name;
+    }
+
+    public bool IsPlayerConversing()
+    {
+        return playerInConversation;
     }
 }
