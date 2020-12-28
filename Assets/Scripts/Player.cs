@@ -10,16 +10,26 @@ public class Player : MonoBehaviour
 	Animator animator;
 
 	[SerializeField]
-	GameObject model;
+	GameObject model = null;
+
+	[SerializeField]
+	GameObject carryPosition = null;
 
 	float horizontal;
 	float vertical;
 	float speed = 12f;
 	Quaternion modelRotation;
 
+	GameObject objectCarrying;
+	GameObject personEscorting;
+
+	public GameObject CarryPosition { get => carryPosition; }
+	public GameObject ObjectCarrying { get => objectCarrying; set => objectCarrying = value; }
+
 	void Start()
 	{
 		rigidbody = GetComponent<Rigidbody>();
+		animator = GetComponent<Animator>();
 	}
 
 	void Update()
