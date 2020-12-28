@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
 		vertical = Input.GetAxisRaw("Vertical");
 
 		animator.SetFloat("Blend", runBlend);
+		animator.SetBool("Holding", objectCarrying != null);
 	}
 
 	void FixedUpdate()

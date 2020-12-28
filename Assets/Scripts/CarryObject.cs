@@ -17,9 +17,11 @@ public class CarryObject : MonoBehaviour
 	bool beingCarried = false;
 	GameObject playerRef = null;
 
+	float startY;
+
 	void Start()
 	{
-		
+		startY = transform.position.y;
 	}
 
 	void Update()
@@ -37,6 +39,9 @@ public class CarryObject : MonoBehaviour
 			else
 			{
 				transform.SetParent(null);
+				transform.position = new Vector3(transform.position.x, startY, transform.position.z);
+				Player player = playerRef.GetComponent<Player>();
+				player.ObjectCarrying = null;
 				beingCarried = false;
 			}
 		}
