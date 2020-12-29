@@ -17,6 +17,12 @@ public class RequestAI : MonoBehaviour
     [SerializeField] Slider timeSlider;
     [SerializeField] Gradient timeGradient;
     [SerializeField] Image timeFill;
+
+    public struct Items
+    {
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +46,12 @@ public class RequestAI : MonoBehaviour
                 // call timer fail
                 Debug.Log("Timer Failed 1");
 				LevelManager.Singleton.FailRequest();
+                timeSlider.maxValue = 0;
+                timeSlider.value = 0;
+                timeIsReducing = false;
+                currentRequestGap = maxRequestGap;
+                gapActive = true;
+                timeSlider.gameObject.SetActive(false);
             }
         }
 
