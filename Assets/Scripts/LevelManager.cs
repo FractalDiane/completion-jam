@@ -47,6 +47,16 @@ public class LevelManager : MonoBehaviour
 		}
 	}
 
+	public void FailRequest()
+	{
+		failedRequests++;
+		if (failedRequests > 3)
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+			currentTime = levelTime;
+		}
+	}
+
 	void WinLevel()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
