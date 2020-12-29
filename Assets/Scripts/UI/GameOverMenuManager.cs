@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameOverMenuManager : MonoBehaviour
+public class GameOverMenuManager : UIManager
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject winPage;
+    [SerializeField] private GameObject losePage;
+    public void Retry()
     {
-        
+        Debug.Log("Retry yeah");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowGameLosePage()
     {
-        
+        losePage.SetActive(true);
+        winPage.SetActive(false);
+    }
+
+    public void ShowGameWinPage()
+    {
+        losePage.SetActive(false);
+        winPage.SetActive(true);
     }
 }
