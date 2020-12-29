@@ -10,6 +10,7 @@ public class MainMenuManager : UIManager
     [SerializeField] private GameObject creditPage;
 
     [SerializeField] private MainMenuOptionPageManager optionPageManager;
+    [SerializeField] private MainMenuCreditPageManager creditPageManager;
 
     public void StartGame()
     {
@@ -30,6 +31,7 @@ public class MainMenuManager : UIManager
         mainPage.SetActive(false);
         creditPage.SetActive(true);
         AudioManager.instance.PlaySFX(AudioFileName.UIClick);
+        creditPageManager.ShowCredit();
     }
 
     public void BackToMainPage()

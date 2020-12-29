@@ -24,7 +24,7 @@ public class ResizeObjectOnSelect : MonoBehaviour
         Vector3 current = transform.localScale;
         if(Vector3.Distance(target, current) > 0.01f)
         {
-            Vector3 newScale = Vector3.Lerp(current, target, scalingSpeed);
+            Vector3 newScale = Vector3.Lerp(current, target, scalingSpeed * 60 * Time.unscaledDeltaTime);
             transform.localScale = newScale;
         }
     }
