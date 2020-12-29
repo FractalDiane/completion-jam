@@ -12,6 +12,9 @@ public class LevelManager : MonoBehaviour
 
 	[SerializeField]
 	int numberOfRequests = 3;
+
+	[SerializeField]
+	GameObject gameOverCanvas = null;
 	
 	float currentTime;
 
@@ -26,9 +29,9 @@ public class LevelManager : MonoBehaviour
 		if (singleton != null)
 		{
 			Destroy(singleton.gameObject);
-			singleton = this;
 		}
 
+		singleton = this;
 		DontDestroyOnLoad(gameObject);
 	}
 
@@ -50,14 +53,20 @@ public class LevelManager : MonoBehaviour
 	public void FailRequest()
 	{
 		failedRequests++;
-		if (failedRequests > 3)
+		if (failedRequests >= 3)
 		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
-			currentTime = levelTime;
+			gameOverCanvas.GetComponentInChildren<GameOverMenuManager>().ShowGameLosePage();
+			//Invoke(nameof(RestartLevel), 3.0f);
 		}
 	}
 
 	void WinLevel()
+	{
+		gameOverCanvas.GetComponentInChildren<GameOverMenuManager>().ShowGameWinPage();
+		//Invoke(nameof(RestartLevel), 3.0f);
+	}
+
+	void RestartLevel()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
 		currentTime = levelTime;
