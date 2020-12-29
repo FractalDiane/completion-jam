@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMenuManager : MonoBehaviour
+public class MainMenuManager : UIManager
 {
     [SerializeField] private GameObject mainPage;
     [SerializeField] private GameObject optionPage;
@@ -25,11 +25,6 @@ public class MainMenuManager : MonoBehaviour
     {
         mainPage.SetActive(false);
         creditPage.SetActive(true);
-    }
-
-    public void ExitGame()
-    {
-        Application.Quit();
     }
 
     public void BackToMainPage()

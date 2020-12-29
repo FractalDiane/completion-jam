@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenuManager : MonoBehaviour
+public class PauseMenuManager : UIManager
 {
     [SerializeField] private GameObject pauseMenuPage;
-    [SerializeField] private GameObject mainMenuConfimPage;
-    [SerializeField] private GameObject exitConfirmPage;
-
+    [SerializeField] private ConfirmUIManager confirmUIManager;
     void Update()
     {
         if(Input.GetButtonDown("Pause"))
@@ -23,9 +21,8 @@ public class PauseMenuManager : MonoBehaviour
     void Pause()
     {
         pauseMenuPage.SetActive(true);
-        mainMenuConfimPage.SetActive(false);
-        exitConfirmPage.SetActive(false);
         Time.timeScale = 0;
+        confirmUIManager.CancelAllConfirmation();
     }
 
     public void Resume()
@@ -34,30 +31,4 @@ public class PauseMenuManager : MonoBehaviour
         pauseMenuPage.SetActive(false);
     }
 
-    public void GoToMainMenu()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenu");
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
-    public void CancelConfirmation()
-    {
-        mainMenuConfimPage.SetActive(false);
-        exitConfirmPage.SetActive(false);
-    }
-
-    public void ShowMainMenuConfirmation()
-    {
-        mainMenuConfimPage.SetActive(true);
-    }
-
-    public void ShowExitConfirmation()
-    {
-        exitConfirmPage.SetActive(true);
-    }
 }

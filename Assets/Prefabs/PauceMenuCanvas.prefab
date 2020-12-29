@@ -297,6 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 378032804}
   - component: {fileID: 378032805}
+  - component: {fileID: 7238803159101654192}
   m_Layer: 5
   m_Name: Manager
   m_TagString: Untagged
@@ -336,8 +337,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuPage: {fileID: 647453643461734050}
-  mainMenuConfimPage: {fileID: 1816423016}
-  exitConfirmPage: {fileID: 1832750999}
+  confirmUIManager: {fileID: 7238803159101654192}
+--- !u!114 &7238803159101654192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378032803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f1487be5bd86dd4899d1fe5cadb40a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  confimPages:
+  - {fileID: 1816423016}
+  - {fileID: 1832750999}
 --- !u!1 &1264255211
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,7 +729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &776316018698228372
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1180,18 +1195,18 @@ PrefabInstance:
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 378032805}
+      objectReference: {fileID: 7238803159101654192}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CancelConfirmation
+      value: CancelAllConfirmation
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseMenuManager, Assembly-CSharp
+      value: ConfirmUIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1314,18 +1329,18 @@ PrefabInstance:
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 378032805}
+      objectReference: {fileID: 7238803159101654192}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CancelConfirmation
+      value: CancelAllConfirmation
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseMenuManager, Assembly-CSharp
+      value: ConfirmUIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1577,23 +1592,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 378032805}
+      objectReference: {fileID: 7238803159101654192}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowExitConfirmation
+      value: ShowConfirmation
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseMenuManager, Assembly-CSharp
+      value: ConfirmUIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1723,23 +1742,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 378032805}
+      objectReference: {fileID: 7238803159101654192}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowMainMenuConfirmation
+      value: ShowConfirmation
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseMenuManager, Assembly-CSharp
+      value: ConfirmUIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2031,7 +2050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseMenuManager, Assembly-CSharp
+      value: UIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1117407815448219502, guid: e7a8834b9ea049148b2c3ef8cc70be2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
