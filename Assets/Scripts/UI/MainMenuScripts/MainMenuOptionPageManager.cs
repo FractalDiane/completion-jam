@@ -7,9 +7,6 @@ public class MainMenuOptionPageManager : MonoBehaviour
 {
     #region Volumes
     [Header("Volume")]
-    private float currentMasterVlume = 1;
-    private float currentMusicVlume = 1;
-    private float currentSFXVlume = 1;
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
@@ -23,26 +20,26 @@ public class MainMenuOptionPageManager : MonoBehaviour
     //set initialze values of all UI elements on option page
     public void Initialize()
     {
-        masterSlider.SetValueWithoutNotify(currentMasterVlume);
-        musicSlider.SetValueWithoutNotify(currentMusicVlume);
-        sfxSlider.SetValueWithoutNotify(currentSFXVlume);
+        masterSlider.SetValueWithoutNotify(AudioManager.instance.GetMasterVolume());
+        musicSlider.SetValueWithoutNotify(AudioManager.instance.GetMusicVolume());
+        sfxSlider.SetValueWithoutNotify(AudioManager.instance.GetSFXVolume());
         ChangeLanguage(currentLanguage);
     }
 
     //Change real variables instead of testing ones
     public void OnMasterVolumeChanged()
     {
-        currentMasterVlume = masterSlider.value;
+        AudioManager.instance.SetMasterVolume(masterSlider.value);
     }
 
     public void OnMusicVolumeChanged()
     {
-        currentMusicVlume = musicSlider.value;
+        AudioManager.instance.SetMusicVolume(musicSlider.value);
     }
 
     public void OnSFXVolumeChanged()
     {
-        currentSFXVlume = sfxSlider.value;
+        AudioManager.instance.SetSFXVolume(sfxSlider.value);
     }
     #endregion
 

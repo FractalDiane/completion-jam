@@ -35,23 +35,34 @@ public class CarryObject : MonoBehaviour
 	{
 		if (playerInArea && Input.GetButtonDown("Action"))
 		{
-			if (!beingCarried)
-			{
-				Player player = playerRef.GetComponent<Player>();
-				player.ObjectCarrying = gameObject;
-				transform.position = player.CarryPosition.transform.position;
-				transform.SetParent(player.CarryPosition.transform);
-				beingCarried = true;
-			}
-			else if (dropPoint != null)
-			{
-				transform.SetParent(null);
-				transform.position = dropPoint.transform.position;
-				Player player = playerRef.GetComponent<Player>();
-				player.ObjectCarrying = null;
-				beingCarried = false;
-			}
+			PickUp(playerRef);
 		}
+	}
+
+	public void PickUp(GameObject playerReference)
+	{
+		if (!beingCarried && playerReference.GetComponent<Player>().ObjectCarrying == null)
+		{
+			Player player = playerReference.GetComponent<Player>();
+			player.ObjectCarrying = gameObject;
+			transform.position = player.CarryPosition.transform.position;
+			transform.SetParent(player.CarryPosition.transform);
+			beingCarried = true;
+		}
+		else if (dropPoint != null)
+		{
+			transform.SetParent(null);
+			transform.position = dropPoint.transform.position;
+			Player player = playerReference.GetComponent<Player>();
+			player.ObjectCarrying = null;
+			beingCarried = false;
+		}
+	}
+
+	public void SetItemModel(GameObject model)
+	{
+		GameObject modelInst = Instantiate(model, transform.position, Quaternion.identity);
+		modelInst.transform.parent = transform;
 	}
 
 	void OnTriggerEnter(Collider collider)

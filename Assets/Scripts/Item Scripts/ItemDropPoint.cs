@@ -9,14 +9,4 @@ public class ItemDropPoint : MonoBehaviour
 
 	public bool Occupied { set => occupied = value; }
 	public GameObject Item { get => item; set => item = value; }
-
-	void Start()
-	{
-		
-	}
-
-	void Update()
-	{
-		
-	}
 }
