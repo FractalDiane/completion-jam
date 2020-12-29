@@ -12,16 +12,37 @@ public class AudioManager : MonoBehaviour
     private float masterVolume = 1;
     private float musicVolume = 1;
     private float sfxVolume = 1;
+    public AudioClip test;
     void Awake()
     {
         if(instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }else{
             Destroy(gameObject);
         }
     }
 
+    //==========================================================================================
+    //Play Music
+    //==========================================================================================
+    public void PlaySFX(AudioClip clip, float volumeScale = 1)
+    {
+        sfxAudioSource.PlayOneShot(clip, volumeScale);
+    }
+
+    public void PlayMusic(AudioClip clip, bool loop = true, float volumeScale = 1)
+    {
+        musicAudioSource.clip = clip;
+        musicAudioSource.loop = loop;
+        musicAudioSource.volume = volumeScale;
+        musicAudioSource.Play();
+    }
+
+    //==========================================================================================
+    //Change/Get Mixer Values
+    //==========================================================================================
     public float GetMasterVolume()
     {
         return masterVolume;
