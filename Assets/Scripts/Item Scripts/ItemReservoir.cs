@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class ItemReservoir : MonoBehaviour
 {
-	[System.Serializable]
-	class ItemModels
-	{
-		[SerializeField]
-		GameObject[] models;
-
-		public int Length { get => models.Length; }
-		public GameObject this[int i] => models[i];
-	}
-
 	[SerializeField]
 	ItemType itemGenerated;
 
@@ -21,10 +11,8 @@ public class ItemReservoir : MonoBehaviour
 	GameObject itemObjectRef = null;
 
 	[SerializeField]
-	ItemModels[] itemModels;
+	GameObject[] itemModels;
 
-	[SerializeField]
-	string[][] test;
 
 	bool playerInArea = false;
 	GameObject playerRef;
@@ -37,7 +25,7 @@ public class ItemReservoir : MonoBehaviour
 			{
 				GameObject obj = Instantiate(itemObjectRef, playerRef.GetComponent<Player>().CarryPosition.transform.position, Quaternion.identity);
 				CarryObject item = obj.GetComponent<CarryObject>();
-				item.SetItemModel(itemModels[(int)itemGenerated][(int)Random.Range(0, itemModels[(int)itemGenerated].Length)]);
+				item.SetItemModel(itemModels[Random.Range(0, itemModels.Length)]);
 				item.PickUp(playerRef);
 			}
 		}

@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
 
 	float horizontal;
 	float vertical;
+
+	[SerializeField]
 	float speed = 12f;
 	Quaternion modelRotation;
 

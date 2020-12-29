@@ -111,7 +111,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &8193139477221978492
 MonoBehaviour:
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 6181466927335465072}
   carryPosition: {fileID: 4080159908599851313}
+  speed: 12
 --- !u!1001 &6415820474121116961
 PrefabInstance:
   m_ObjectHideFlags: 0
