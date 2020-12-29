@@ -9,7 +9,6 @@ public class RequestAI : MonoBehaviour
 {
     [SerializeField] bool timeIsReducing = false;
     [SerializeField] ItemType requiredObject;
-    [SerializeField] bool wantsTeddyBear;
     [SerializeField] float requestTime;
 
     [SerializeField] float maxRequestGap = 30;
@@ -32,16 +31,7 @@ public class RequestAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(!wantsTeddyBear)
-        {
-            SetMaxSatisfaction(requestTime, ItemType.Toy2);
-            afImage.SetActive(true);
-        }
-        else
-        {
-            SetMaxSatisfaction(requestTime, requestsList[listIndex]);
-            imageList[listIndex].SetActive(true);
-        }
+        SetMaxSatisfaction(requestTime, requestsList[listIndex]);
     }
 
     // Update is called once per frame
@@ -92,6 +82,7 @@ public class RequestAI : MonoBehaviour
     public void SetMaxSatisfaction(float max, ItemType obj)
     {
         textBubble.SetActive(true);
+        imageList[listIndex].SetActive(true);
         timeSlider.maxValue = max;
         timeSlider.value = timeSlider.maxValue;
         timeFill.color = timeGradient.Evaluate(1f);
@@ -109,7 +100,6 @@ public class RequestAI : MonoBehaviour
             timeSlider.maxValue = 0;
             timeSlider.value = 0;
             timeIsReducing = false;
-            imageList[listIndex].SetActive(false);
             currentRequestGap = maxRequestGap;
             gapActive = true;
             timeSlider.gameObject.SetActive(false);
