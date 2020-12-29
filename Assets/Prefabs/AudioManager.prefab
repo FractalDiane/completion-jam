@@ -175,6 +175,11 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: 4be7e58c80354ec45a632642b1c3d7b2, type: 2}
   musicAudioSource: {fileID: 2984341872187738153}
   sfxAudioSource: {fileID: 2984341871044274208}
+  audioFiles:
+  - name: 0
+    clip: {fileID: 8300000, guid: 0d0e3c37a142e4146af0bdb8c0000f5e, type: 3}
+  - name: 1
+    clip: {fileID: 8300000, guid: 6980d7d4445372e479c944ef8afc0c3a, type: 3}
 --- !u!1 &2984341872187738159
 GameObject:
   m_ObjectHideFlags: 0

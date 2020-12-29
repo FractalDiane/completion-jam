@@ -12,12 +12,15 @@ public class AudioManager : MonoBehaviour
     private float masterVolume = 1;
     private float musicVolume = 1;
     private float sfxVolume = 1;
-    public AudioClip test;
+    [SerializeField] private AudioFile[] audioFiles;
+    private Dictionary<AudioFileName, AudioClip> audioLibrary;
+
     void Awake()
     {
         if(instance == null)
         {
             instance = this;
+            InitializeLibrary();
             DontDestroyOnLoad(gameObject);
         }else{
             Destroy(gameObject);
@@ -27,9 +30,26 @@ public class AudioManager : MonoBehaviour
     //==========================================================================================
     //Play Music
     //==========================================================================================
+    public void InitializeLibrary()
+    {
+        audioLibrary = new Dictionary<AudioFileName, AudioClip>();
+        foreach(AudioFile audioFile in audioFiles)
+        {  
+            audioLibrary.Add(audioFile.name, audioFile.clip);
+        }
+    }
+
     public void PlaySFX(AudioClip clip, float volumeScale = 1)
     {
         sfxAudioSource.PlayOneShot(clip, volumeScale);
+    }
+
+    public void PlaySFX(AudioFileName clipName, float volumeScale = 1)
+    {
+        if(audioLibrary.ContainsKey(clipName))
+            PlaySFX(audioLibrary[clipName], volumeScale);
+        else
+            Debug.LogError("AudioManager.PlaySFX(): " + clipName + " does not exist in the audio library.");
     }
 
     public void PlayMusic(AudioClip clip, bool loop = true, float volumeScale = 1)
@@ -38,6 +58,14 @@ public class AudioManager : MonoBehaviour
         musicAudioSource.loop = loop;
         musicAudioSource.volume = volumeScale;
         musicAudioSource.Play();
+    }
+
+    public void PlayMusic(AudioFileName clipName, bool loop = true, float volumeScale = 1)
+    {
+        if(audioLibrary.ContainsKey(clipName))
+            PlayMusic(audioLibrary[clipName], loop, volumeScale);
+        else
+            Debug.LogError("AudioManager.PlaySFX(): " + clipName + " does not exist in the audio library.");
     }
 
     //==========================================================================================
@@ -75,4 +103,17 @@ public class AudioManager : MonoBehaviour
         sfxVolume = value;
         mixer.SetFloat("SFXVolume", Mathf.Log10(value) * 20);
     }
+}
+
+public enum AudioFileName
+{
+    UIHover,
+    UIClick
+}
+
+[System.Serializable]
+public class AudioFile
+{
+    public AudioFileName name;
+    public AudioClip clip;
 }
