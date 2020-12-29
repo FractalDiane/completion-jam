@@ -9,16 +9,19 @@ public class GameOverMenuManager : UIManager
     public void Retry()
     {
         Debug.Log("Retry yeah");
+        Time.timeScale = 1;
     }
 
     public void ShowGameLosePage()
     {
+        Time.timeScale = 0;
         losePage.SetActive(true);
         winPage.SetActive(false);
     }
 
     public void ShowGameWinPage()
     {
+        Time.timeScale = 0;
         losePage.SetActive(false);
         winPage.SetActive(true);
     }
