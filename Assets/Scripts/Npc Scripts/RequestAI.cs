@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum ItemType { Toy1, Toy2, Medicine, Doctor, DoctorKit };
+public enum ItemType { Toys, Medicine, Doctor, DoctorKit };
 
 public class RequestAI : MonoBehaviour
 {

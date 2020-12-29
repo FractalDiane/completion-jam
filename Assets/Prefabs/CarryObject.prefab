@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Thing
-  type: 1
+  type: 0
   pickupTime: 0.5
   slowdownFactor: 1
   pickupSound: {fileID: 8300000, guid: 327eb7a4efe370e4da2c4cdaca5f5e13, type: 3}

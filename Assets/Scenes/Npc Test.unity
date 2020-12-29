@@ -306,26 +306,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1684527519, guid: 30f56722096e036429cce21924a72032, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684527521, guid: 30f56722096e036429cce21924a72032, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2cb1ca0804349d54793a032f9f165cee, type: 3}
-    - target: {fileID: 1684527521, guid: 30f56722096e036429cce21924a72032, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684527521, guid: 30f56722096e036429cce21924a72032, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684527521, guid: 30f56722096e036429cce21924a72032, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2249071614548476913, guid: 30f56722096e036429cce21924a72032, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
