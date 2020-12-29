@@ -20,7 +20,7 @@ public class UIMover : MonoBehaviour
         while(progress < 1)
         {
             progress += speed * 60 * Time.unscaledDeltaTime;
-            transform.position = Vector3.Lerp(startPoint.position, endPoint.position, progress);
+            transform.position = Vector3.Lerp(startPoint.position, endPoint.position, Mathf.Log10(1 + progress * 9));
             yield return null;
         }
         transform.position = endPoint.position;
