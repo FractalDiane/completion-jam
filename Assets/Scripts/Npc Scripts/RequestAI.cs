@@ -60,7 +60,7 @@ public class RequestAI : MonoBehaviour
                 timeIsReducing = false;
                 // call timer fail
                 Debug.Log("Timer Failed 1");
-                //LevelManager.Singleton.FailRequest();
+                LevelManager.Singleton.FailRequest();
                 textBubble.SetActive(false);
                 timeSlider.maxValue = 0;
                 timeSlider.value = 0;
