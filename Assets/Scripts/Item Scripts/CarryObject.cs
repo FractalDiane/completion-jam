@@ -16,6 +16,12 @@ public class CarryObject : MonoBehaviour
 	[SerializeField]
 	float slowdownFactor = 1.0f;
 
+	[SerializeField]
+	AudioClip pickupSound = null;
+
+	[SerializeField]
+	AudioClip putdownSound = null;
+
 	bool playerInArea = false;
 	bool beingCarried = false;
 	GameObject playerRef = null;
@@ -43,6 +49,7 @@ public class CarryObject : MonoBehaviour
 	{
 		if (!beingCarried && playerReference.GetComponent<Player>().ObjectCarrying == null)
 		{
+			AudioManager.instance.PlaySFX(pickupSound);
 			Player player = playerReference.GetComponent<Player>();
 			player.ObjectCarrying = gameObject;
 			transform.position = player.CarryPosition.transform.position;
@@ -51,6 +58,7 @@ public class CarryObject : MonoBehaviour
 		}
 		else if (dropPoint != null)
 		{
+			AudioManager.instance.PlaySFX(putdownSound);
 			transform.SetParent(null);
 			transform.position = dropPoint.transform.position;
 			Player player = playerReference.GetComponent<Player>();

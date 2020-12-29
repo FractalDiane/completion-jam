@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
 	void FixedUpdate()
 	{
 		Vector3 target = new Vector3(horizontal, 0f, vertical);
-		Vector3 result = target * speed;
+		Vector3 result = target.normalized * speed;
 		if (result.magnitude > 0)
 		{
 			runBlend = Mathf.Clamp(runBlend + 4f * Time.deltaTime, 0f, 1f);
