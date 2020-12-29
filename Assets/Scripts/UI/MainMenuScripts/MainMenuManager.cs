@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : UIManager
 {
@@ -9,9 +10,11 @@ public class MainMenuManager : UIManager
     [SerializeField] private GameObject creditPage;
 
     [SerializeField] private MainMenuOptionPageManager optionPageManager;
+
     public void StartGame()
     {
         AudioManager.instance.PlaySFX(AudioFileName.UIClick);
+		SceneManager.LoadScene("Lvl 1");
     }
 
     public void ShowOptionPage()
