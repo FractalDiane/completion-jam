@@ -81,11 +81,10 @@ public class DialogueManager : MonoBehaviour
     {
         playerCanProceed = false;
         dialogueText.text = "";
-        foreach (char letter in sentence.ToCharArray())
+        for(int i = 1; i < sentence.Length; ++i)
         {
-            dialogueText.text += letter;
+            dialogueText.text = sentence.Substring(0,i) + "<color=#ffffff00>" + sentence.Substring(i)+ "</color>";
             yield return null;
-
             if(Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape))
             {
                 dialogueText.text = sentence;
