@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverMenuManager : UIManager
 {
@@ -8,7 +9,7 @@ public class GameOverMenuManager : UIManager
     [SerializeField] private GameObject losePage;
     public void Retry()
     {
-        Debug.Log("Retry yeah");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
         AudioManager.instance.PlaySFX(AudioFileName.UIClick);
     }
