@@ -32,7 +32,6 @@ public class LevelManager : MonoBehaviour
 		}
 
 		singleton = this;
-		DontDestroyOnLoad(gameObject);
 	}
 
 	void Start()
