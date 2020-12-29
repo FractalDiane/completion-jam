@@ -47,6 +47,7 @@ public class MainMenuOptionPageManager : MonoBehaviour
     //Todo: use Language Enum instead of int
     public void ChangeLanguage(int value)
     {
+        AudioManager.instance.PlaySFX(AudioFileName.UIClick);
         if(currentLanguage != value)
         {
             currentLanguage = value;

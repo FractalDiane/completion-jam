@@ -22,13 +22,15 @@ public class PauseMenuManager : UIManager
     {
         pauseMenuPage.SetActive(true);
         Time.timeScale = 0;
-        confirmUIManager.CancelAllConfirmation();
+        confirmUIManager.CancelAllConfirmation(false);
+        AudioManager.instance.PlaySFX(AudioFileName.UIClick);
     }
 
     public void Resume()
     {
         Time.timeScale = 1;
         pauseMenuPage.SetActive(false);
+        AudioManager.instance.PlaySFX(AudioFileName.UIClick);
     }
 
 }

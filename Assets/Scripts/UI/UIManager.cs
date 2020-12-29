@@ -9,11 +9,12 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
+        AudioManager.instance.PlaySFX(AudioFileName.UIClick);
     }
 
     public void QuitGame()
     {
-        Application.Quit();
+        AudioManager.instance.PlaySFX(AudioFileName.UIClick);
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #else

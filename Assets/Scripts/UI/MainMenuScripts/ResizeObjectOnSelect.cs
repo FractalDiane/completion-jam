@@ -33,6 +33,7 @@ public class ResizeObjectOnSelect : MonoBehaviour
     public void OnMouseEnterObject()
     {
         mouseOnObject = true;
+        AudioManager.instance.PlaySFX(AudioFileName.UIHover);
     }
 
     //needs to be called by EventTrigger component, set state when mouse enter object

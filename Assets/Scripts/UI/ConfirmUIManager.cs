@@ -8,8 +8,10 @@ public class ConfirmUIManager : MonoBehaviour
     [SerializeField] private GameObject[] confimPages;
 
 
-    public void CancelAllConfirmation()
+    public void CancelAllConfirmation(bool playSound = true)
     {
+        if(playSound)
+            AudioManager.instance.PlaySFX(AudioFileName.UIClick);
         foreach(GameObject p in confimPages)
             p.SetActive(false);
     }
@@ -17,5 +19,6 @@ public class ConfirmUIManager : MonoBehaviour
     public void ShowConfirmation(int index)
     {
         confimPages[index].SetActive(true);
+        AudioManager.instance.PlaySFX(AudioFileName.UIClick);
     }
 }

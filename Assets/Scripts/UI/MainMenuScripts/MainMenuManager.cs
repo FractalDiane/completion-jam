@@ -11,7 +11,7 @@ public class MainMenuManager : UIManager
     [SerializeField] private MainMenuOptionPageManager optionPageManager;
     public void StartGame()
     {
-
+        AudioManager.instance.PlaySFX(AudioFileName.UIClick);
     }
 
     public void ShowOptionPage()
@@ -19,12 +19,14 @@ public class MainMenuManager : UIManager
         mainPage.SetActive(false);
         optionPage.SetActive(true);
         optionPageManager.Initialize();
+        AudioManager.instance.PlaySFX(AudioFileName.UIClick);
     }
 
     public void ShowCreditPage()
     {
         mainPage.SetActive(false);
         creditPage.SetActive(true);
+        AudioManager.instance.PlaySFX(AudioFileName.UIClick);
     }
 
     public void BackToMainPage()
@@ -32,5 +34,6 @@ public class MainMenuManager : UIManager
         mainPage.SetActive(true);
         optionPage.SetActive(false);
         creditPage.SetActive(false);
+        AudioManager.instance.PlaySFX(AudioFileName.UIClick);
     }
 }

@@ -10,6 +10,7 @@ public class GameOverMenuManager : UIManager
     {
         Debug.Log("Retry yeah");
         Time.timeScale = 1;
+        AudioManager.instance.PlaySFX(AudioFileName.UIClick);
     }
 
     public void ShowGameLosePage()
