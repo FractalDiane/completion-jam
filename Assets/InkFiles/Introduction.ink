@@ -14,22 +14,31 @@ Lost a bet. Just a heads up, the smug jerk that won will likely be watching from
 Right. Well, while you're here, please sign this.
 
 #char Af
-A contract? Bit old fashioned, but it seems you know your stuff.
+A contract? Ugh, this just keeps getting better.
 
 #char Dr 
-Roommate at uni was a witch, I picked up a thing or two about demons.
+My roommate at uni was a witch, so I picked up a thing or two about demons.
 
 #char Af
-Let's see...no harm to children, clinic staff...limited use of demonic powers...fair enough. You have my word.
+Let's see...no harm to children, clinic staff...limited use of demonic powers...blah blah blah. Fine, you have my word.
 
 #char Dr 
-Excellent. Since you aren't a trained nurse, you'll be helping me manage the children and occasionally fetching me some things.
+Excellent. 
+
+#char Af 
+So what do I have to do around here? Scaring kids into taking their medicine?
+
+#char Dr 
+Since you aren't a trained nurse, you'll be helping me manage the children and keep them occupied while I perform check ups.
 
 #char Af
 Will my being a demon cause any trouble?
 
 #char Dr 
-Oh, the kids will be terrified at first, but I think it will be exciting for them. How many kids can say they got treated by a demon? Worst case scenario, you standing in the corner might get them to sit still long enough for a shot.
+Oh, the kids will be terrified at first, but I think it will be exciting for them. How many kids can say they got treated by a demon? 
+
+#char Dr 
+Worst case scenario, you standing in the corner might get them to sit still long enough for a shot.
 
 #char Af 
 Like a good cop, bad cop type of thing.
@@ -38,4 +47,9 @@ Like a good cop, bad cop type of thing.
 Af, we aren't dealing with criminals.
 
 #char Af 
-No, we're dealing with worse- children.
+No, we're dealing with worse.
+
+#char Af 
+Children.
+
+->END
