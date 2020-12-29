@@ -306,6 +306,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1768982948, guid: 30f56722096e036429cce21924a72032, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768982950, guid: 30f56722096e036429cce21924a72032, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3bbbeb8d8f9ec1b4585bc841c26243bb, type: 3}
+    - target: {fileID: 1768982950, guid: 30f56722096e036429cce21924a72032, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768982950, guid: 30f56722096e036429cce21924a72032, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768982950, guid: 30f56722096e036429cce21924a72032, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2249071614548476913, guid: 30f56722096e036429cce21924a72032, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -365,6 +385,10 @@ PrefabInstance:
     - target: {fileID: 2249071615274489850, guid: 30f56722096e036429cce21924a72032, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249071615274489853, guid: 30f56722096e036429cce21924a72032, type: 3}
+      propertyPath: wantsTeddyBear
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4708457278947261972, guid: 30f56722096e036429cce21924a72032, type: 3}
       propertyPath: worldCamera
