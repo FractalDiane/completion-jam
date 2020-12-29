@@ -26,6 +26,7 @@ public class ItemReservoir : MonoBehaviour
 				GameObject obj = Instantiate(itemObjectRef, playerRef.GetComponent<Player>().CarryPosition.transform.position, Quaternion.identity);
 				CarryObject item = obj.GetComponent<CarryObject>();
 				item.SetItemModel(itemModels[Random.Range(0, itemModels.Length)]);
+				item.Type = itemGenerated;
 				item.PickUp(playerRef);
 			}
 		}

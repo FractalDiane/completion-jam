@@ -30,7 +30,7 @@ public class CarryObject : MonoBehaviour
 
 	GameObject dropPoint = null;
 
-	public ItemType Type { get => type; }
+	public ItemType Type { get => type; set => type = value; }
 
 	void Start()
 	{
