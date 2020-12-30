@@ -30,7 +30,7 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] UnityEvent dialogueEndEvent;
 
-    void Start()
+    void Awake()
     {
         tags = new List<string>();
         dialogueManagerInstance = this;
@@ -138,7 +138,19 @@ public class DialogueManager : MonoBehaviour
 
     void SetNameText(string _name)
     {
-        nameText.text = _name;
+        if(_name == "Dr")
+        {
+            nameText.text = "Dr. Meriweather";
+        }
+        else if(_name == "Af")
+        {
+            nameText.text = "Nurse Af";
+        }
+        else
+        {
+            nameText.text = _name;
+        }
+        
     }
 
     public bool IsPlayerConversing()

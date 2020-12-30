@@ -12,10 +12,11 @@ public class MainMenuManager : UIManager
     [SerializeField] private MainMenuOptionPageManager optionPageManager;
     [SerializeField] private MainMenuCreditPageManager creditPageManager;
 
+    [SerializeField] private string nextScene;
     public void StartGame()
     {
         AudioManager.instance.PlaySFX(AudioFileName.UIClick);
-		SceneManager.LoadScene("Lvl 1");
+		SceneManager.LoadScene(nextScene);
     }
 
     public void ShowOptionPage()
