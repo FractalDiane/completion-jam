@@ -4004,27 +4004,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Diane Sparks : Gameplay programmer, 3D modeler and animator
-
-
-    Molina
-    Mey : Programmer, Producer
-
-
-    Rami Shreim : Artist (3D Modeler, Texture, 2D
-    Artist)
-
-
-    Riley Park : Writer, Particles
-
-
-    Victor Zhou : Level Designer
-    and Gameplay Programmer
-
-
-    Weiyan Zhu : UI Programmer, UI Artist I guess
-
-'
+  m_text: "Diane Sparks : Gameplay programmer, 3D modeler and animator\n\nMolina
+    Mey : Programmer, Producer\n\nRami Shreim : Artist (3D Modeler, Texture, 2D Artist)\n\nRiley
+    Park : Writer, Particles\n\nVictor Zhou : Level Designer and Gameplay Programmer\n\nWeiyan
+    Zhu : UI Programmer, UI Artist I guess\n\nMusic by Eric Matyas\r - www.soundimage.org\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
