@@ -11,9 +11,9 @@ public class TrashCan : MonoBehaviour
 	{
 		if (playerInArea && Input.GetButtonDown("Action"))
 		{
-			if (playerRef.GetComponent<Player>().ObjectCarrying != null)
+			Player player = playerRef.GetComponent<Player>();
+			if (player.ObjectCarrying != null && player.ObjectCarrying.GetComponent<CarryObject>().Type != ItemType.Doctor)
 			{
-				Player player = playerRef.GetComponent<Player>();
 				Destroy(player.ObjectCarrying);
 				player.ObjectCarrying = null;
 			}
