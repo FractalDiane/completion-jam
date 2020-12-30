@@ -296,9 +296,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The kids will have desire certain items and you need to run around as Af
-    to find those items and give it to them before they get bored and angry. If you
-    mess up three times, you'll be fired!
+  m_text: The kids will request certain items, and you need to run around as Af to
+    find those items and give them to the kids before they get bored and angry. If
+    you mess up three times, you'll be fired!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Help Af, get through her shift by making sure kids are satisfied!
+  m_text: 'Help Af get through her shift by making sure the kids are satisfied!
 
 '
   m_isRightToLeft: 0
