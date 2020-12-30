@@ -3821,6 +3821,22 @@ PrefabInstance:
       propertyPath: losePage
       value: 
       objectReference: {fileID: 1480581570}
+    - target: {fileID: 1427779566366364859, guid: 1bced7a6906260546b06033987e19b27, type: 3}
+      propertyPath: nextLevelSceneName
+      value: Ending
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958021696783771835, guid: 1bced7a6906260546b06033987e19b27, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390935492714670195, guid: 1bced7a6906260546b06033987e19b27, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390935493131258425, guid: 1bced7a6906260546b06033987e19b27, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2cb1ca0804349d54793a032f9f165cee, type: 3}
     - target: {fileID: 7126579873052431529, guid: 1bced7a6906260546b06033987e19b27, type: 3}
       propertyPath: m_text
       value: Continue

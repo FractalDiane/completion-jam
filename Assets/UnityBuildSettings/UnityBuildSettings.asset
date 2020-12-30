@@ -13,34 +13,91 @@ MonoBehaviour:
   m_Name: UnityBuildSettings
   m_EditorClassIdentifier: 
   _basicSettings:
-    baseBuildFolder: bin
-    buildPath: $YEAR-$MONTH-$DAY/$BUILD/$RELEASE_TYPE/$PLATFORM/$ARCHITECTURE/$DISTRIBUTION
+    baseBuildFolder: C:\Users\Huevo\Desktop\Nurse Demon Builds\1 First Test
+    buildPath: $PLATFORM$ARCHITECTURE
     openFolderPostBuild: 1
   _productParameters:
-    buildCounter: 0
-    lastGeneratedVersion: 
-    version: 1.0.$DAYSSINCE("January 1, 2015").$SECONDS
-    autoGenerate: 1
+    buildCounter: 1
+    lastGeneratedVersion: 1
+    version: 1
+    autoGenerate: 0
   _releaseTypeList:
-    releaseTypes: []
+    releaseTypes:
+    - typeName: Prototype
+      bundleIndentifier: 
+      companyName: 
+      productName: CompletionJam
+      developmentBuild: 0
+      allowDebugging: 0
+      enableHeadlessMode: 0
+      customDefines: 
+      sceneList:
+        enabledScenes:
+        - fileGUID: d93d80bbd2aee1c4b9c479c00b8a824d
+        - fileGUID: 39586852f9dba4742b072cf4b05b792d
+        - fileGUID: afcbdc462028d6f488ac6890e28fa7b7
+        - fileGUID: e542d90dd897c134aabd466f478fcd09
   _platformList:
-    platforms: []
+    platforms:
+    - enabled: 1
+      distributionList:
+        distributions: []
+      architectures:
+      - target: 5
+        name: Windows x86
+        enabled: 0
+      - target: 19
+        name: Windows x64
+        enabled: 1
+      variants: []
+      platformName: PC
+      binaryNameFormat: '{0}.exe'
+      dataDirNameFormat: '{0}_Data'
+      targetGroup: 1
+    - enabled: 1
+      distributionList:
+        distributions: []
+      architectures:
+      - target: 20
+        name: WebGL
+        enabled: 1
+      variants: []
+      platformName: WebGL
+      binaryNameFormat: '{0}'
+      dataDirNameFormat: '{0}_Data'
+      targetGroup: 13
   _projectConfigurations:
     configSet:
-      _Buckets: ffffffffffffffffffffffff
-      _HashCodes: 000000000000000000000000
-      _Next: 000000000000000000000000
-      _Count: 0
-      _Version: 0
+      _Buckets: 04000000ffffffffffffffffffffffffffffffff02000000ffffffff
+      _HashCodes: a489ad6f70ea0c7d2c4c406e62a05d626c1dc8760000000000000000
+      _Next: ffffffff00000000ffffffff01000000030000000000000000000000
+      _Count: 5
+      _Version: 5
       _FreeList: -1
       _FreeCount: 0
       _Keys:
-      - 
+      - Prototype/PC/Windows x64
+      - Prototype/PC
+      - Prototype/WebGL/WebGL
+      - Prototype/WebGL
+      - Prototype
       - 
       - 
       _Values:
       - enabled: 1
         childKeys: []
+      - enabled: 1
+        childKeys:
+        - Prototype/PC/Windows x64
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Prototype/WebGL/WebGL
+      - enabled: 1
+        childKeys:
+        - Prototype/PC
+        - Prototype/WebGL
       - enabled: 1
         childKeys: []
       - enabled: 1
@@ -49,8 +106,8 @@ MonoBehaviour:
     showConfigs: 0
     showBuildInfo: 0
     hideDisabled: 0
-    treeView: 0
-    selectedKeyChain: 
+    treeView: 1
+    selectedKeyChain: Prototype/PC/Windows x64
   _preBuildActions:
     buildActions: []
   _postBuildActions:
