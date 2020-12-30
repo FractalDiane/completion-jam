@@ -42,10 +42,10 @@ public class RequestAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("DebugComplete"))
+        /*if (Input.GetButtonDown("DebugComplete"))
         {
             CheckRequirement(requiredObject);
-        }
+        }*/
         if (timeIsReducing)
         {
             timeSlider.value -= Time.deltaTime;
