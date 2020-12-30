@@ -74,7 +74,7 @@ public class RequestAI : MonoBehaviour
             {
                 gapActive = false;
                 //select new request
-                if (listIndex < requestsList.Length - 2)
+                if (listIndex < requestsList.Length - 1)
                 {
                     timeSlider.gameObject.SetActive(true);
                     listIndex += 1;
