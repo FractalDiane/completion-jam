@@ -73,10 +73,14 @@ public class Player : MonoBehaviour
 	{
 		if (objectCarrying != null && collider.gameObject.tag == "Kid")
 		{
-			RequestAI kid = collider.gameObject.GetComponent<RequestAI>();
-			kid.CheckRequirement(objectCarrying.GetComponent<CarryObject>().Type);
-			Destroy(objectCarrying);
-			objectCarrying = null;
+			if (!collider.gameObject.GetComponent<RequestAI>().GapActive && objectCarrying.GetComponent<CarryObject>().Type != ItemType.Doctor)
+			{
+				RequestAI kid = collider.gameObject.GetComponent<RequestAI>();
+				kid.CheckRequirement(objectCarrying.GetComponent<CarryObject>().Type);
+				Destroy(objectCarrying);
+				objectCarrying = null;
+			}
+			
 		}
 	}
 }

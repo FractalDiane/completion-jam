@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum ItemType { Toys, Medicine, Doctor, DoctorKit };
+public enum ItemType { Toys, Medicine, Doctor, DoctorKit, None };
 
 public class RequestAI : MonoBehaviour
 {
@@ -14,6 +14,9 @@ public class RequestAI : MonoBehaviour
     [SerializeField] float maxRequestGap = 30;
     [SerializeField] float currentRequestGap = 30;
     [SerializeField] bool gapActive = false;
+
+    public bool GapActive { get => gapActive; }
+
     [SerializeField] ItemType[] requestsList;
     [SerializeField] GameObject[] imageList;
     [SerializeField] GameObject afImage;
@@ -22,6 +25,8 @@ public class RequestAI : MonoBehaviour
     [SerializeField] Slider timeSlider;
     [SerializeField] Gradient timeGradient;
     [SerializeField] Image timeFill;
+
+    [SerializeField] GameObject itemDropPoint;
 
     public struct Items
     {
@@ -52,6 +57,7 @@ public class RequestAI : MonoBehaviour
                 Debug.Log("Timer Failed 1");
                 LevelManager.Singleton.FailRequest();
                 textBubble.SetActive(false);
+                imageList[listIndex].SetActive(false);
                 timeSlider.maxValue = 0;
                 timeSlider.value = 0;
                 timeIsReducing = false;
@@ -68,7 +74,7 @@ public class RequestAI : MonoBehaviour
             {
                 gapActive = false;
                 //select new request
-                if (listIndex < requestsList.Length - 1)
+                if (listIndex < requestsList.Length - 2)
                 {
                     timeSlider.gameObject.SetActive(true);
                     listIndex += 1;
@@ -103,10 +109,12 @@ public class RequestAI : MonoBehaviour
             currentRequestGap = maxRequestGap;
             gapActive = true;
             timeSlider.gameObject.SetActive(false);
+            requiredObject = ItemType.None;
+            LevelManager.Singleton.PassRequest();
         }
         else
         {
-            Debug.Log("Timer Failed 2");
+            LevelManager.Singleton.FailRequest();
         }
     }
 }

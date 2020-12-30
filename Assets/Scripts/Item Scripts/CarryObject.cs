@@ -62,8 +62,15 @@ public class CarryObject : MonoBehaviour
 			transform.SetParent(null);
 			transform.position = dropPoint.transform.position;
 			Player player = playerReference.GetComponent<Player>();
+			
+			dropPoint.GetComponent<ItemDropPoint>().Occupied = true;
+			dropPoint.GetComponent<ItemDropPoint>().Item = player.ObjectCarrying;
+			dropPoint.GetComponent<ItemDropPoint>().callCheckRequirements();
+
 			player.ObjectCarrying = null;
 			beingCarried = false;
+
+
 		}
 	}
 

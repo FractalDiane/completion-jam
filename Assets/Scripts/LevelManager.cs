@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -15,7 +16,13 @@ public class LevelManager : MonoBehaviour
 
 	[SerializeField]
 	GameObject gameOverCanvas = null;
-	
+
+	[SerializeField]
+	Image timer;
+
+	[SerializeField]
+	GameObject[] strikesList;
+
 	float currentTime;
 
 	int failedRequests = 0;
@@ -43,6 +50,7 @@ public class LevelManager : MonoBehaviour
 	void Update()
 	{
 		currentTime -= Time.deltaTime;
+		timer.fillAmount = currentTime / levelTime;
 		if (currentTime <= 0)
 		{
 			WinLevel();
@@ -51,11 +59,21 @@ public class LevelManager : MonoBehaviour
 
 	public void FailRequest()
 	{
+		strikesList[failedRequests].SetActive(true);
 		failedRequests++;
 		if (failedRequests >= 3)
 		{
 			gameOverCanvas.GetComponentInChildren<GameOverMenuManager>().ShowGameLosePage();
 			//Invoke(nameof(RestartLevel), 3.0f);
+		}
+	}
+
+	public void PassRequest()
+	{
+		numberOfRequests--;
+		if(numberOfRequests <= 0)
+		{
+			WinLevel();
 		}
 	}
 
