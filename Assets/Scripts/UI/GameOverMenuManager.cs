@@ -43,5 +43,6 @@ public class GameOverMenuManager : UIManager
     public void GoToNextLevel()
     {
         SceneManager.LoadScene(nextLevelSceneName);
+        Time.timeScale = 1;
     }
 }
