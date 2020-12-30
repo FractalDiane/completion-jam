@@ -817,11 +817,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeIsReducing: 0
   requiredObject: 1
-  requestTime: 10
-  maxRequestGap: 3
-  currentRequestGap: 3
+  requestTime: 45
+  maxRequestGap: 15
+  currentRequestGap: 15
   gapActive: 0
-  requestsList: 00000000020000000300000004000000
+  requestsList: 00000000010000000200000003000000
   imageList:
   - {fileID: 1768982948}
   - {fileID: 919925257}
@@ -1039,7 +1039,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4708457278947262057}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.023452759}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4708457279349357204}
@@ -1048,7 +1048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.07944107, y: 5.0889997}
+  m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 11.5958, y: 5.224}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4708457278947262058
