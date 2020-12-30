@@ -15,6 +15,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioFile[] audioFiles;
     private Dictionary<AudioFileName, AudioClip> audioLibrary;
 
+    [SerializeField] AudioClip music;
+
     void Awake()
     {
         if(instance == null)
@@ -25,6 +27,11 @@ public class AudioManager : MonoBehaviour
         }else{
             Destroy(gameObject);
         }
+    }
+
+    void Start()
+    {
+        PlayMusic(music);
     }
 
     //==========================================================================================
